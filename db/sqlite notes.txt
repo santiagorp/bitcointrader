@@ -1,0 +1,5 @@
+Create a unix timestamp for java DateTime
+SELECT strftime('%s','now') * 1000 
+
+We can visualize with:
+SELECT datetime(time / 1000, 'unixepoch', 'localtime')

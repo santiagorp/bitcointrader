@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.xeiam.xchange</groupId>
+  <artifactId>xchange-btcchina</artifactId>
+  <versioning>
+    <release>1.9.0-GOLLUM</release>
+    <versions>
+      <version>1.9.0-GOLLUM</version>
+    </versions>
+    <lastUpdated>20131208022303</lastUpdated>
+  </versioning>
+</metadata>

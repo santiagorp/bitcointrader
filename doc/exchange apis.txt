@@ -1,0 +1,5 @@
+Maximum number of decimals allowed by each stock:
+
+      btc-e     mtgox   bitstamp
+BTC:    6
+Fiat:   4

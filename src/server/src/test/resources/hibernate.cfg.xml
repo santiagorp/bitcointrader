@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="dialect">org.hibernate.util.SQLiteDialect</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:db/scalper_test.sqlite</property>
+        <property name="connection.username"></property>
+        <property name="connection.password"></property>
+               
+        <mapping class="com.srp.trading.domain.Operation"/>
+        <mapping class="com.srp.trading.domain.Order"/>
+        <mapping class="com.srp.trading.domain.OrderHistory"/>
+        <mapping class="com.srp.trading.domain.LastOrderStatus"/>
+        <mapping class="com.srp.trading.domain.Symbol"/>
+    </session-factory>
+</hibernate-configuration>

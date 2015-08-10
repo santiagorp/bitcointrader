@@ -1,0 +1,28 @@
+Scalper business logic
+----------------------
+
+/* Any error in a DB save/update should abort the process and print
+   the stack trace */
+
+// Place orders with errors before creating new ones
+IF now + orderDelay > lastOrderTime AND get_num_unknown_orders > 0
+   unknown_orders = get_unknown_orders()
+   FOR o in unknown_orders
+       place_order(o)
+       lastOrderTime = now
+
+// Create new orders if there is room for it
+IF now + orderDelay > lastOrderTime AND isProfitable(lastTicker) AND get_num_active_ops_db() < max_ops
+   operation = create_operation(lastTicker) // Status unknown, no references
+   success = placeBid // Set the ref in the DB
+   IF success
+      lastOrderTime = now
+   success = placeAsk
+   IF success // Set the ref in the DB
+      lastOrderTime = now
+
+// Update orders status in DB
+IF now + openOrdersDelay > lastGetOpenOrdersTime
+   openOrders = get_open_orders
+   updateDB(openOrders)
+   lastGetOpenOrdersTime = now
